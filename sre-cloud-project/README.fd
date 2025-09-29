@@ -1,0 +1,30 @@
+# Create basic README
+@"
+# SRE Cloud Project
+
+Secure, Observable, and Scalable Kubernetes Platform with GitOps
+
+## Project Structure
+
+- `apps/` - Sample microservices
+  - `app1/` - Sample application 1
+  - `app2/` - Sample application 2
+  - `app3/` - Sample application 3
+- `infrastructure/` - Platform components
+  - `argocd/` - Argo CD configurations
+  - `istio/` - Service mesh configurations
+  - `monitoring/` - Observability stack
+    - `prometheus/` - Metrics collection
+    - `grafana/` - Dashboards
+    - `loki/` - Log aggregation
+    - `tempo/` - Distributed tracing
+  - `security/` - Security configurations
+- `.github/workflows/` - GitHub Actions workflows
+
+## Getting Started
+
+1. Start Minikube:
+   ```bash
+   minikube start --cpus=4 --memory=8192mb --disk-size=40g
+   minikube addons enable metrics-server
+   minikube addons enable ingress
