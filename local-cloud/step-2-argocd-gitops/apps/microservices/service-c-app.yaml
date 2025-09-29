@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: service-c
+  namespace: argocd
+spec:
+  project: platform
+  source:
+    repoURL: https://github.com/Bhavesh1326/local-cloud.git
+    targetRevision: main
+    path: step-5-microservices/service-c/k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: local-cloud-ns
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

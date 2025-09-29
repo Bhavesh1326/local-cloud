@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: platform
+  namespace: argocd
+spec:
+  description: Platform components and microservices
+  sourceRepos:
+    - https://github.com/Bhavesh1326/local-cloud.git
+  destinations:
+    - namespace: '*'
+      server: https://kubernetes.default.svc
