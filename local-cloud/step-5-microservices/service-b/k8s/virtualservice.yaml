@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: service-b
+  namespace: local-cloud-ns
+spec:
+  hosts:
+    - "service-b.local-cloud.com"
+  gateways:
+    - local-cloud-gateway
+  http:
+    - route:
+        - destination:
+            host: service-b
+            subset: v1
