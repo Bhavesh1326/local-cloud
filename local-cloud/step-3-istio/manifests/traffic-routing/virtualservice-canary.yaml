@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: service-a
+  namespace: local-cloud-ns
+spec:
+  hosts:
+    - service-a.local-cloud-ns.svc.cluster.local
+  http:
+    - route:
+        - destination:
+            host: service-a
+            subset: v1
+          weight: 80
+        - destination:
+            host: service-a
+            subset: v2
+          weight: 20
