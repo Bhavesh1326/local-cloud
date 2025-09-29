@@ -1,0 +1,5 @@
+﻿apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: istio-system
+resources:
+  - https://github.com/istio/istio/releases/latest/download/istio-operator.yaml

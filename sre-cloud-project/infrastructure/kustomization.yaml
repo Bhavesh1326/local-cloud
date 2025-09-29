@@ -1,0 +1,12 @@
+﻿apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - argocd/bootstrap
+  - argocd/projects
+  - argocd/applications
+  - istio/base
+  - monitoring/prometheus
+  - monitoring/grafana
+  - monitoring/loki
+  - monitoring/tempo
+  - security/policies

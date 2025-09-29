@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio
+  namespace: argocd
+spec:
+  project: platform
+  source:
+    path: infrastructure/istio
+    repoURL: https://github.com/Bhavesh1326/sre-cloud-project.git
+    targetRevision: feature/kubernetes-platform
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
